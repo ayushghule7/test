@@ -1,0 +1,38 @@
+
+//***** Environment Variable to be involve here......... *****
+
+pipeline {
+    agent any
+    environment {
+        name = Mayur
+    }
+    stages {
+        stage("Get the Source") {
+            steps {
+                sh 'echo "Getting source code"'
+            }
+
+        }
+
+        stage("Build") {
+            steps {
+                sh 'echo "Building code with maven....."'
+                sh 'echo "$(name)"'
+            }
+        }
+
+        stage("Test") {
+            steps {
+                sh 'echo "testing code with sonar"'
+                sh 'echo "$(name)"'
+            }
+        }
+
+        stage("Deploy") {
+            steps {
+                sh 'echo "Deploying code to dev"'
+                sh 'echo "$(name)"'
+            }
+        }
+    }
+}
