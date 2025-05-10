@@ -15,7 +15,7 @@ bool isPrime(int num) {
 }
 
 int main() {
-    printf("Prime numbers between 0 and 50 are:\n");
+    printf("Prime numbers between 0 and 100 are:\n");
     for (int i = 0; i <= 100; i++) {
         if (isPrime(i)) {
             printf("%d ", i);
